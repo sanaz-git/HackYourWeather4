@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Weather = ({ info, deleteItem }) => {
   return (
@@ -32,6 +33,9 @@ const Weather = ({ info, deleteItem }) => {
             lon: {info.coord.lon.toFixed(2)} , lat:
             {info.coord.lat.toFixed(2)}
           </p>
+          <Link to="/forecast">
+            <button>5 Days Forecast</button>
+          </Link>
         </li>
       </ul>
     </div>
