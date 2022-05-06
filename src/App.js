@@ -12,8 +12,8 @@ const App = () => {
         {/* <City /> */}
 
         <Routes>
-          <Route path="/city" exact element={<City />} />
-          <Route path="/forecast" element={<Forecast />} />
+          <Route path="/" exact element={<City />} />
+          <Route path="/forecast/:cityId" element={<Forecast />} />
         </Routes>
       </div>
     </Router>

@@ -3,11 +3,11 @@ import Weather from './Weather';
 
 const City = () => {
   const [city, setCity] = useState('');
-  const [allInfo, setAllInfo] = useState(
+  const [allInfo, setAllInfo] = useState([
     localStorage.getItem('myData')
       ? JSON.parse(localStorage.getItem('myData'))
       : [],
-  );
+  ]);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
@@ -21,6 +21,7 @@ const City = () => {
 
     const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+    console.log(url);
 
     setIsPending(true);
 
@@ -43,9 +44,7 @@ const City = () => {
   };
 
   function handleDelete(e) {
-    setAllInfo(
-      allInfo.filter((item) => item.weather[0].id !== parseInt(e.target.id)),
-    );
+    setAllInfo(allInfo.filter((item) => item.id !== parseInt(e.target.id)));
   }
 
   return (

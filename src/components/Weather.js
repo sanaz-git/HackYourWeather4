@@ -7,17 +7,13 @@ const Weather = ({ info, deleteItem }) => {
       <ul>
         <li>
           <div className="button">
-            <button
-              className="deleteButton"
-              id={info.weather[0].id}
-              onClick={deleteItem}
-            >
+            <button className="deleteButton" id={info.id} onClick={deleteItem}>
               x
             </button>
           </div>
 
           <h2>
-            {info.name},{info.sys.country}
+            {info.name},{info.sys?.country}
           </h2>
           <h3>{info.weather[0].main}</h3>
           <p className="des">
@@ -33,9 +29,17 @@ const Weather = ({ info, deleteItem }) => {
             lon: {info.coord.lon.toFixed(2)} , lat:
             {info.coord.lat.toFixed(2)}
           </p>
-          <Link to="/forecast">
-            <button>5 Days Forecast</button>
-          </Link>
+
+          <>
+            {info.map((el) => (
+              <article key={el.cityId}>
+                <Link to={`/forecast${el.cityId}`}>
+                  <h1>{el.name}</h1>
+                  <button>5 Days Forecast</button>
+                </Link>
+              </article>
+            ))}
+          </>
         </li>
       </ul>
     </div>
