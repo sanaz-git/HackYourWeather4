@@ -30,16 +30,9 @@ const Weather = ({ info, deleteItem }) => {
             {info.coord.lat.toFixed(2)}
           </p>
 
-          <>
-            {info.map((el) => (
-              <article key={el.cityId}>
-                <Link to={`/forecast${el.cityId}`}>
-                  <h1>{el.name}</h1>
-                  <button>5 Days Forecast</button>
-                </Link>
-              </article>
-            ))}
-          </>
+          <Link to={`/Forecast/${info.id}`}>
+            <button>5 Days Forecast</button>
+          </Link>
         </li>
       </ul>
     </div>

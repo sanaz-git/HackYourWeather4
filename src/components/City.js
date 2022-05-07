@@ -4,9 +4,9 @@ import Weather from './Weather';
 const City = () => {
   const [city, setCity] = useState('');
   const [allInfo, setAllInfo] = useState([
-    localStorage.getItem('myData')
-      ? JSON.parse(localStorage.getItem('myData'))
-      : [],
+    // localStorage.getItem('myData')
+    //   ? JSON.parse(localStorage.getItem('myData'))
+    //   : [],
   ]);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
@@ -64,8 +64,8 @@ const City = () => {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {allInfo &&
-        allInfo.map((info, index) => (
-          <Weather key={index} info={info} deleteItem={handleDelete} />
+        allInfo.map((info) => (
+          <Weather key={info} info={info} deleteItem={handleDelete} />
         ))}
     </div>
   );

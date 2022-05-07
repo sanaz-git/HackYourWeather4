@@ -9,11 +9,10 @@ const App = () => {
     <Router>
       <div className="App">
         <h2>Weather</h2>
-        {/* <City /> */}
 
         <Routes>
           <Route path="/" exact element={<City />} />
-          <Route path="/forecast/:cityId" element={<Forecast />} />
+          <Route path="/forecast/:id" element={<Forecast />} />
         </Routes>
       </div>
     </Router>
