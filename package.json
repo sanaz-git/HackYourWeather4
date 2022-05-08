@@ -10,6 +10,8 @@
     "font": "^0.0.4",
     "font-awesome": "^4.7.0",
     "react": "^18.0.0",
+    "react-chartjs-2": "^4.1.0",
+    "react-countup": "^6.2.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "react-router": "^6.3.0",
