@@ -12,10 +12,10 @@ const Weather = ({ info, deleteItem }) => {
             </button>
           </div>
 
-          <h2>
+          <h3>
             {info.name},{info.sys?.country}
-          </h2>
-          <h3>{info.weather[0].main}</h3>
+          </h3>
+          <h4>{info.weather[0].main}</h4>
           <p className="des">
             {info.weather[0].description}
             <img
@@ -31,7 +31,7 @@ const Weather = ({ info, deleteItem }) => {
           </p>
 
           <Link to={`/Forecast/${info.id}`}>
-            <button>5 Days Forecast</button>
+            <button className="forecast">5 Days Forecast</button>
           </Link>
         </li>
       </ul>
