@@ -54,14 +54,14 @@ const Forecast = () => {
             margin={{
               top: 10,
               right: 30,
-              left: 0,
+              left: 30,
               bottom: 0,
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
 
             <XAxis dataKey="date" />
-            <YAxis dataKey="temp" />
+            <YAxis dataKey="temp" tickFormatter={(temp) => `${temp} °C`} />
             <Tooltip />
             <Legend />
             <Line
@@ -73,7 +73,7 @@ const Forecast = () => {
             <Line
               type="monotone"
               dataKey="temp"
-              stroke="#8884d8"
+              stroke="#B6024B"
               fill="#8884d8"
             />
           </LineChart>
