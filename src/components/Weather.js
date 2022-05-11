@@ -13,7 +13,7 @@ const Weather = ({ info, deleteItem }) => {
           </div>
 
           <h3>
-            {info.name},{info.sys?.country}
+            {info.name},{info.sys.country}
           </h3>
           <h4>{info.weather[0].main}</h4>
           <p className="des">

@@ -6,7 +6,6 @@
 }
 .App {
   text-align: center;
-
   margin-top: 30px;
 }
 
@@ -73,8 +72,8 @@ input::placeholder {
   text-transform: lowercase !important;
 }
 
-.backHome {
-  margin-top: 20px;
+.back {
+  margin-top: 30px;
   background-color: blueviolet;
   padding: 5px;
   color: white;
@@ -94,11 +93,12 @@ h2 {
   background-color: blueviolet;
   color: white;
   text-align: center;
-  width: 50%;
+  min-width: 100%;
   border-radius: 10px 10px 0 0;
-  margin-left: 25%;
+
   margin-top: 10px;
   padding: 10px;
+  position: fixed;
 }
 
 .h22 {
@@ -106,10 +106,29 @@ h2 {
   background-color: rgb(171, 116, 223);
   color: white;
   text-align: center;
-  width: 50%;
+  min-width: 100%;
   border-radius: 0 0 10px 10px;
-  margin-left: 25%;
+
   font-size: 15px;
   padding: 5px;
+
   margin-top: 0px !important;
+  margin-bottom: 20px;
+  position: fixed;
+}
+
+.forecastPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forecastChart {
+  margin: auto;
+  padding: 20px;
+  min-width: 95%;
+  height: 500px;
+  border: 1px solid #282c34;
+  border-radius: 10px;
 }

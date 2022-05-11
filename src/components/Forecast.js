@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import {
+  ResponsiveContainer,
   LineChart,
   Line,
   XAxis,
@@ -42,25 +43,29 @@ const Forecast = () => {
   };
 
   return (
-    <div>
+    <div className="forecastPage">
       <h2 className="h22">5 days forecast</h2>
-
-      <div>
-        {
+      <div className="forecastChart">
+        <ResponsiveContainer minWidth="95%" minHeight={400}>
           <LineChart
-            width={1000}
-            height={400}
             data={newData}
             margin={{
-              top: 10,
-              right: 30,
-              left: 30,
-              bottom: 0,
+              top: 15,
+              right: 0,
+              left: 0,
+              bottom: 30,
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
 
-            <XAxis dataKey="date" />
+            <XAxis
+              dataKey="date"
+              interval={5}
+              angle={-20}
+              textAnchor="end"
+              type="category"
+              fontSize="15"
+            />
             <YAxis dataKey="temp" tickFormatter={(temp) => `${temp} °C`} />
             <Tooltip />
             <Legend />
@@ -77,12 +82,12 @@ const Forecast = () => {
               fill="#8884d8"
             />
           </LineChart>
-        }
-      </div>
+        </ResponsiveContainer>
 
-      <Link to="/">
-        <button className="backHome">Back to Home</button>
-      </Link>
+        <Link to="/">
+          <button className="back">Back to Home</button>
+        </Link>
+      </div>
     </div>
   );
 };
