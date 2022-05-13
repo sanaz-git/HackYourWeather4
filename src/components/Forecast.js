@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import {
   ResponsiveContainer,
-  LineChart,
-  Line,
+  AreaChart,
   XAxis,
   YAxis,
-  CartesianGrid,
+  Area,
   Tooltip,
-  Legend,
+  CartesianGrid,
 } from 'recharts';
 
 const Forecast = () => {
@@ -44,52 +43,72 @@ const Forecast = () => {
 
   return (
     <div className="forecastPage">
-      <h2 className="h22">5 days forecast</h2>
+      <h2 className="h22">5 Days Forecast</h2>
+
       <div className="forecastChart">
-        <ResponsiveContainer minWidth="95%" minHeight={400}>
-          <LineChart
+        <ResponsiveContainer width="100%" height={300}>
+          <AreaChart
             data={newData}
             margin={{
-              top: 15,
-              right: 0,
+              top: 10,
+              right: 30,
               left: 0,
-              bottom: 30,
+              bottom: 0,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-
-            <XAxis
-              dataKey="date"
-              interval={5}
-              angle={-20}
-              textAnchor="end"
-              type="category"
-              fontSize="15"
-            />
-            <YAxis dataKey="temp" tickFormatter={(temp) => `${temp} °C`} />
-            <Tooltip />
-            <Legend />
-            <Line
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Area
               type="monotone"
-              dataKey="date"
+              dataKey="temp"
               stroke="#8884d8"
               fill="#8884d8"
             />
-            <Line
-              type="monotone"
-              dataKey="temp"
-              stroke="#B6024B"
-              fill="#8884d8"
+            <XAxis
+              dataKey="date"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: '#fff' }}
             />
-          </LineChart>
+            <YAxis
+              dataKey="temp"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fontSize: 12 }}
+              tickFormatter={(temp) => `${temp}°C`}
+            />
+            <Tooltip content={<CustomTooltip />} />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              opacity={0.1}
+              vertical={false}
+            />
+          </AreaChart>
         </ResponsiveContainer>
-
-        <Link to="/">
-          <button className="back">Back to Home</button>
-        </Link>
       </div>
+
+      <Link to="/">
+        <button className="back">Back to Home</button>
+      </Link>
     </div>
   );
 };
+
+function CustomTooltip({ active, payload, label }) {
+  if (active) {
+    return (
+      <div className="tooltip">
+        <p>{`${label}`}</p>
+        <p>{`${payload[0].value}°C`}</p>
+      </div>
+    );
+  }
+
+  return null;
+}
 
 export default Forecast;
