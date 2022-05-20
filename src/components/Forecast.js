@@ -46,7 +46,7 @@ const Forecast = () => {
       <h2 className="h22">5 Days Forecast</h2>
 
       <div className="forecastChart">
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={newData}
             margin={{
@@ -70,14 +70,14 @@ const Forecast = () => {
             />
             <XAxis
               dataKey="date"
-              axisLine={false}
-              tickLine={false}
-              tick={{ fill: '#fff' }}
+              axisLine={true}
+              tickLine={true}
+              tick={{ fill: 'black' }}
             />
             <YAxis
               dataKey="temp"
-              axisLine={false}
-              tickLine={false}
+              axisLine={true}
+              tickLine={true}
               tick={{ fontSize: 12 }}
               tickFormatter={(temp) => `${temp}°C`}
             />
