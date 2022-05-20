@@ -81,7 +81,7 @@ const Forecast = () => {
               tick={{ fontSize: 12 }}
               tickFormatter={(temp) => `${temp}°C`}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip />
             <CartesianGrid
               strokeDasharray="3 3"
               opacity={0.1}
@@ -97,18 +97,5 @@ const Forecast = () => {
     </div>
   );
 };
-
-function CustomTooltip({ active, payload, label }) {
-  if (active) {
-    return (
-      <div className="tooltip">
-        <p>{`${label}`}</p>
-        <p>{`${payload[0].value}°C`}</p>
-      </div>
-    );
-  }
-
-  return null;
-}
 
 export default Forecast;
