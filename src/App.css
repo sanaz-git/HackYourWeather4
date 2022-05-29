@@ -9,19 +9,22 @@
   text-align: center;
   margin: auto;
   width: 700px;
+  background: linear-gradient(45deg, #ba5370, #f4e2d8);
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .allInfo {
   text-align: left;
-  text-emphasis: left;
   margin-top: 40px;
   padding: 20px;
   padding-left: 30px;
-  border: 2px solid black;
+  border: 2px solid rgb(74, 12, 133);
   width: 60%;
   margin-left: auto;
   margin-right: auto;
   line-height: 30px;
+  border-radius: 20px;
 }
 
 .allInfo ul li {
@@ -46,17 +49,21 @@
   border-radius: 10px;
   border: 1px solid gray;
   font-family: FontAwesome;
+  background: #f4e2d8;
+  margin-bottom: 5px;
 }
 
 .btn {
   min-width: 10%;
   height: 32px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid blueviolet;
   height: 32px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: FontAwesome;
   padding-top: 2px;
+  background-color: blueviolet;
+  color: white;
 }
 
 .button {
@@ -66,31 +73,26 @@
   align-self: center;
   background-color: #efefef;
   font-size: 20px;
-  border: 1px solid black;
+  border: none;
   border-radius: 50%;
   width: 23px;
   height: 23px;
   font-size: 15px;
+  color: purple;
 }
 
 input::placeholder {
   text-transform: lowercase !important;
 }
 
+.forecast,
 .back {
-  margin-top: 30px;
-  background-color: blueviolet;
-  padding: 5px;
-  color: white;
-  border-radius: 5px;
-}
-
-.forecast {
   margin-top: 20px;
   background-color: blueviolet;
-  padding: 5px;
+  padding: 10px;
   color: white;
   border-radius: 5px;
+  border: none;
 }
 
 h2 {

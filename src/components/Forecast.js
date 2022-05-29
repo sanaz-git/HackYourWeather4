@@ -72,13 +72,13 @@ const Forecast = () => {
               dataKey="date"
               axisLine={true}
               tickLine={true}
-              tick={{ fill: 'black' }}
+              tick={{ fontSize: 12, fill: 'black' }}
             />
             <YAxis
               dataKey="temp"
               axisLine={true}
               tickLine={true}
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 12, fill: 'black' }}
               tickFormatter={(temp) => `${temp}°C`}
             />
             <Tooltip />
